@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:thermal_printer_flutter/print.dart';
+import 'package:thermal_printer_flutter/print2.dart';
+import 'package:thermal_printer_flutter/print3.dart';
+import 'package:thermal_printer_flutter/print4.dart';
+import 'package:thermal_printer_flutter/print5.dart';
 
 class Home extends StatelessWidget {
   //
@@ -49,6 +53,22 @@ class Home extends StatelessWidget {
               },
             ),
           ),
+          ElevatedButton(onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (_) => Print2(data)));
+          }, child: Text('print2')),
+          ElevatedButton(onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (_) => Print3(data)));
+          }, child: Text('print3')),
+          ElevatedButton(onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (_) => Print4(data)));
+          }, child: Text('print4')),
+          ElevatedButton(onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (_) => Print5(data)));
+          }, child: Text('print5')),
           Container(
             color: Colors.grey[200],
             padding: EdgeInsets.all(20),

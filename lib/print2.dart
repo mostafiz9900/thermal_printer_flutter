@@ -7,14 +7,14 @@ import 'package:flutter_bluetooth_basic/flutter_bluetooth_basic.dart';
 import 'dart:io' show Platform;
 import 'package:image/image.dart';
 
-class Print extends StatefulWidget {
+class Print2 extends StatefulWidget {
   final List<Map<String, dynamic>> data;
-  Print(this.data);
+  Print2(this.data);
   @override
-  _PrintState createState() => _PrintState();
+  _Print2State createState() => _Print2State();
 }
 
-class _PrintState extends State<Print> {
+class _Print2State extends State<Print2> {
 
   PrinterBluetoothManager _printerManager = PrinterBluetoothManager();
   List<PrinterBluetooth> _devices = [];
@@ -98,11 +98,10 @@ class _PrintState extends State<Print> {
     ticket.text('Special 2: blåbærgrød',
         styles: PosStyles(codeTable: PosCodeTable.westEur));
     ticket.text(' ألاما',
-        styles: PosStyles(align:PosAlign.right,codeTable: PosCodeTable.pc3840,reverse: true,fontType: PosFontType.fontA),containsChinese: true);
-
+        styles: PosStyles(align:PosAlign.right,codeTable: PosCodeTable.pc720,reverse: true,fontType: PosFontType.fontA),containsChinese: true);
     ticket.feed(1);
     ticket.text('Thank You',styles: PosStyles(align: PosAlign.center, bold: true));
-    ticket.cut(mode: PosCutMode.partial);
+    ticket.cut();
     return ticket;
   }
 
